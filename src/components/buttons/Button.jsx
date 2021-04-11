@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const ButtonStyles = styled.button`
+cursor: pointer;
 width: 100%;
 border: inherit;
 background-color: inherit;

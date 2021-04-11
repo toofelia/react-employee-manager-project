@@ -58,8 +58,8 @@ if(isValid) {
        return ( 
         <LoginPageStyles>
             <header><h1>Login Page</h1></header>
-            <FormInput type="text" label="email" onChange={(e)=> setEmail(e.target.value.trim())}/> 
-            <FormInput type="text" label="password" onChange={(e)=> setPassword(e.target.value.trim())}/>
+            <FormInput type="email" label="email" onChange={(e)=> setEmail(e.target.value.trim())}/> 
+            <FormInput type="password" label="password" onChange={(e)=> setPassword(e.target.value.trim())}/>
             <Button label="login" uiStyles="login" onClick={handleClick}/>
         </LoginPageStyles>
         );

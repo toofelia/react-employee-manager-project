@@ -24,7 +24,14 @@ z-index: 4;
 a {
   text-decoration:none;
   color:grey;
+}
 
+a:hover {
+    color:#F25E28;
+}
+
+li:hover {
+    text-decoration: underline;
 }
 
 `
@@ -34,8 +41,6 @@ const AppBar = () => {
       <AppBarStyles>
           <ul>
               <li><Link to="/">home</Link></li>
-              <li><Link to="/login">login</Link></li>
-              <li><Link to="/register">register</Link></li>
               <li><Link to="/dashboard">dashboard</Link></li>
           </ul>
       </AppBarStyles>
