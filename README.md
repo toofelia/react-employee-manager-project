@@ -1,3 +1,10 @@
+# App description
+
+The app includes the login and signup functionality made with React.
+It connects to the Firebase hosting and database.
+The demo of this App is here: https://section-one-592ea.web.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -21,11 +28,9 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run build`
 
+### `npx firebase deploy`
 
 ## Setting Up A Firebase Project
-fi
-
-
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
