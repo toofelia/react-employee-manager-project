@@ -10,9 +10,11 @@ import RegisterPage from './pages/RegisterPage'
 import PageNotFound from './pages/404'
 import AppBar from './components/appbar/AppBar'
 import DashBoard from './pages/dashboard/DashBoard'
-import AuthContext from 'auth/AuthContext'
+//import AuthContext from './auth/AuthContext'
 
 function App() {
+
+
 
   //Application Logic
   //console.log(firebaseApp)

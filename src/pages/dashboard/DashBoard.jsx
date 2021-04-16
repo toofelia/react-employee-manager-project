@@ -1,8 +1,13 @@
-import React, {useContext, useState} from 'react';
-import {Redirect} from 'react-router-dom'
+import React, {useContext} from 'react';
+import {Redirect, Link, useRouteMatch, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
  
 import AuthContext from './../../auth/AuthContext'
+
+import ViewAllPanel from './panels/ViewAllPanel'
+import EditPanel from './panels/EditPanel'
+import DeletePanel from './panels/DeletePanel'
+import AddPanel from './panels/AddPanel'
 
 const DashBoardStyles = styled.header ` 
       display:flex;
@@ -14,7 +19,23 @@ z-index:1;
 width: 256px;
 box-shadow: 0 0 5px 0 grey;
 height: calc(100vh - 64px);
-padding: 2rem;
+padding: 1rem;
+z-index: 1;
+h1{
+    font-size:1.5rem;
+}
+
+p{
+    margin-bottom: 1rem;
+    color: grey;
+}
+
+a {
+    text-decoration:none;
+    font-size: 14px;
+}
+
+
 header{
     margin-bottom:1rem;
     font-size: 13px;
@@ -39,9 +60,8 @@ const Panels = styled.aside `
 const DashBoard = (props) => {
    //access the authContext
     const auth = useContext(AuthContext)
-    console.log("Dashboard Render")
-    console.log(auth.isUser)
-
+    const {path,url} = useRouteMatch()
+  
 
     if(auth.isUser){
         return (
@@ -52,17 +72,21 @@ const DashBoard = (props) => {
                     <p>whats all the fuss about</p>
                 </header>
            
-            <ul>
-            <li>view all</li>
-            <li>add new employee</li>
-            <li>edit an employee</li>
-            <li>delete an employee</li>
-              
-                </ul>
+                 <ul>
+                    <li><Link to={`${url}`}>view all</Link></li>
+                    <li><Link to={`${url}/add`}>add content</Link></li>
+                    <li><Link to={`${url}/edit`}>edit content</Link></li>
+                    <li><Link to={`${url}/delete`}>remove content</Link></li>
+               </ul>
             </SideBar>
-            <Panels>
-                
-            </Panels>   
+                <Panels>
+                    <Switch>
+                        <Route exact path={path}><ViewAllPanel/></Route>
+                        <Route path={`${path}/add`}><AddPanel/></Route>
+                        <Route path={`${path}/edit`}><EditPanel/></Route>
+                        <Route path={`${path}/delete`}><DeletePanel/></Route>
+                    </Switch>
+                </Panels>   
     
         </DashBoardStyles>
      );    

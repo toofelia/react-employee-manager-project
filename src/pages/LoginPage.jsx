@@ -29,7 +29,7 @@ h1{
     const LoginPage = (props) => {
         const auth = useContext(AuthContext)
         const [email, setEmail]=useState('toofelia@gmail.com')
-        const [password, setPassword] = useState('12345')
+        const [password, setPassword] = useState('123456')
         const [isValid, setIsValid] = useState(false) 
         
         console.log('render')
